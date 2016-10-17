@@ -1,0 +1,16 @@
+{
+  "name": "twitterusaelectionpredictor",
+  "description": "Twitter Election USA 2016 Predictor",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
