@@ -1,7 +1,6 @@
 var socket = io();
 var canvas_height = parseInt($('#canvas_t').innerHeight() - $('h1').outerHeight() - $('h5').outerHeight() - 40);
 
-
 function Candidate(canvas, tweet) {
   var positive = 0;
   var neutral = 0;
