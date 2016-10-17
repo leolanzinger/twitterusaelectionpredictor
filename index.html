@@ -16,15 +16,19 @@
         box-sizing: border-box;
     }
     .row, .col { height: 100%; }
-    .col { border: 1px solid #eee;}
+    .col { border: 1px solid #EEE;}
     .text-muted { padding-top: 5px; margin-bottom: 5px; }
+    h1 img { height: 30px; }
+    #hillary { color: #2B7BB9; }
+    #trump { color: #BF1237; }
   </style>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
       <div id="canvas_t" class="col col-md-6">
-        <h1> Donald J. Trump</h1>
+        <!--<h1> Donald J. Trump</h1>-->
+        <h1 id="trump">#trump <img src="svg/republicans.svg" /></h1>
         <h5>
           Positive: <span class="positive">0</span>
           Neutral: <span class="neutral">0</span>
@@ -33,7 +37,8 @@
         </h5>
       </div>
       <div id="canvas_h" class="col col-md-6">
-        <h1> Hillary Clinton</h1>
+        <!-- <h1> Hillary Clinton</h1> -->
+        <h1 id="hillary">#hillary <img src="svg/democrats.svg" /></h1>
         <h5>
           Positive: <span class="positive">0</span>
           Neutral: <span class="neutral">0</span>
@@ -43,8 +48,8 @@
       </div>
     </div>
     <footer class="footer">
-      <div class="container">
-        <p class="text-muted pull-right">Made by <a href="https://github.com/leolanzinger">leolanzinger</a> and <a href="https://github.com/stenbln">jvukoja</a>.</p>
+      <div class="container-fluid">
+        <p class="text-muted">Live sentiment analysis of tweets about <a href="https://twitter.com/hashtag/election2016">#elections2016</a> <span class="pull-right">Made by <a href="https://github.com/leolanzinger">leolanzinger</a> and <a href="https://github.com/stenbln">jvukoja</a></span></p>
       </div>
     </footer>
   </div>
@@ -53,8 +58,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.3.5/svg.min.js"></script>
   <script src="draw.js"></script>
   <script>
-  hillary();
-  trump();
+  hillary = new Candidate('canvas_h', 'tweet_h');
+  trump = new Candidate('canvas_t', 'tweet_t');
   </script>
 </body>
 </html>

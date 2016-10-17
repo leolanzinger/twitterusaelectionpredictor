@@ -1,21 +1,21 @@
 {
-  "name": "react-server-example",
-  "version": "1.2.5",
-  "description": "A very simple implementation of server-side React rendering",
+  "name": "twitterusapredictor",
+  "version": "1.0.0",
+  "description": "Live tweet stream analysis of sentiment about the candidates.",
   "main": "server.js",
-  "repository": "mhart/react-server-example",
+  "repository": "leolanzinger/twitterusapredictor",
   "keywords": [
-    "react",
-    "reactjs",
-    "server",
-    "server-side"
+    "nodejs",
+    "socketio",
+    "tweet-stream-node",
+    "svg"
   ],
-  "author": "Michael Hart <michael.hart.au@gmail.com>",
+  "author": "Leonardo Lanzinger <leonardo.lanzinger@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "browserify": "^13.1.0",
-    "literalify": "^0.4.0",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "express": "*",
+    "socket.io": "*",
+    "node-tweet-stream": "*",
+    "salient": "*"
   }
 }
