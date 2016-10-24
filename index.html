@@ -4,6 +4,28 @@
   <title>USA election 2016 Twitter Sentiment Analysis</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="USA 2016 presidential election twitter analyzer. Parsing tweets about #trump and #hillary and analyzing their sentiment." />
+
+  <meta itemprop="name" content="USA election 2016 Twitter Sentiment Analysis">
+  <meta itemprop="description" content="USA 2016 presidential election twitter analyzer. Parsing tweets about #trump and #hillary and analyzing their sentiment.">
+  <meta itemprop="image" content="svg/twitterAnalysis.jpg">
+)
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:title" content="USA election 2016 Twitter Sentiment Analysis">
+  <meta name="twitter:description" content="USA 2016 presidential election twitter analyzer. Parsing tweets about #trump and #hillary and analyzing their sentiment.">
+  <meta name="twitter:creator" content="@author_handle">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image:src" content="svg/twitterAnalysis.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="USA election 2016 Twitter Sentiment Analysis" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://usa2016livetweets.herokuapp.com//" />
+  <meta property="og:image" content="svg/twitterAnalysis.jpg" />
+  <meta property="og:description" content="USA 2016 presidential election twitter analyzer. Parsing tweets about #trump and #hillary and analyzing their sentiment." />
+  <meta property="og:site_name" content="usa2016livetweets" />
   <style>
     html, body {
       height: 100%;
@@ -22,7 +44,7 @@
       bottom: 0;
       width: 100%;
       /* Set the fixed height of the footer here */
-      height: 30px;
+      min-height: 30px;
       background-color: #f5f5f5;
       padding: 5px;
     }
@@ -60,7 +82,16 @@
   </div>
   <footer class="footer">
     <div class="container-fluid">
-      <p class="text-muted">Live sentiment analysis of tweets about <a href="https://twitter.com/hashtag/election2016">#elections2016</a> <span class="pull-right">Made by <a href="https://github.com/leolanzinger">leolanzinger</a> and <a href="https://github.com/stenbln">jvukoja</a></span></p>
+      <div class="row">
+        <div class="col-md-6">
+          <span class="visible-md visible-lg">Live sentiment analysis of tweets</span>
+          <span class="visible-sm visible-xs text-center">Live sentiment analysis of tweets</span>
+        </div>
+        <div class="col-md-6">
+          <span class="visible-md visible-lg pull-right">Made by <a href="https://github.com/leolanzinger">leolanzinger</a> and <a href="https://github.com/stenbln">jvukoja</a></span></p>
+          <span class="visible-sm visible-xs text-center">Made by <a href="https://github.com/leolanzinger">leolanzinger</a> and <a href="https://github.com/stenbln">jvukoja</a></span></p>
+        </div>
+      </div>
     </div>
   </footer>
   <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>

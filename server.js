@@ -37,7 +37,7 @@ twit_h.on('tweet', function (tweet) {
     tweet.t_sentiment = analyser.classify(tweet.text);
     io.emit('tweet_h', tweet);
   }
-})
+});
 
 twit_t.track('trump');
 twit_h.track('hillary');
