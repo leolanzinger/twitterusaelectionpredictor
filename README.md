@@ -1,5 +1,5 @@
 # twitterusaelectionpredictor
-<h3>USA 2016 Election Twitter PRedictor</h3>
+<h3>USA 2016 Election Twitter Predictor</h3>
 
 Tweets with hashtags #trump and #hillary are collected in realtime and processed with semantic analyzer (positive, neutral, negative sentiment).
 
