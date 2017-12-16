@@ -1,5 +1,5 @@
 var n = 3, // The number of series.
-    m = 24; // The number of values per series.
+    m = 2; // The number of values per series.
 
 // The xz array has m elements, representing the x-values shared by all series.
 // The yz array has n elements, representing the y-values of each of the n series.
