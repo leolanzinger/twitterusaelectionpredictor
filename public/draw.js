@@ -45,10 +45,10 @@ function Dot(tweet, red, green, blue, draw) {
   var y = Math.random()*(canvas_height);
   var x = Math.random()*($('.col-md-6').width());
   var dot  = draw.circle(1).move(x,y).fill({ r: red, g: green, b: blue });
-  dot.animate(300, '<', 0).scale(20).after(function() {
+  dot.animate(300, '<', 0).scale(20)/*.after(function() {
     this.animate(7000, '>', 0).attr({fill: '#FFF'})
     .after(function() {
       this.remove();
     });
-  });
+  });*/
 }

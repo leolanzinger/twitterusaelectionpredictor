@@ -14,8 +14,9 @@
   "license": "MIT",
   "dependencies": {
     "express": "*",
-    "socket.io": "*",
+    "mongodb": "^2.2.33",
     "node-tweet-stream": "*",
-    "salient": "*"
+    "salient": "*",
+    "socket.io": "*"
   }
 }

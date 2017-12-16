@@ -60,9 +60,10 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div id="canvas_t" class="col col-md-6">
+
+      <div id="canvas_t" class="col col-md-4">
         <!--<h1> Donald J. Trump</h1>-->
-        <h1 id="trump">#trump <img src="svg/republicans.svg" /></h1>
+        <h1 id="trump">#Bitcoin <img src="svg/republicans.svg" /></h1>
         <h5>
           Positive: <span class="positive">0</span>
           Neutral: <span class="neutral">0</span>
@@ -70,9 +71,24 @@
           Total: <span class="total">0</span>
         </h5>
       </div>
-      <div id="canvas_h" class="col col-md-6">
+
+      <div id="canvas_b" class="col col-md-4">
+        <svg  width="400" height="240" id="chart"></svg>
+      </div>
+
+<!--       <div id="canvas_b" class="col col-md-4">
+        <h1 id="blockchain">#Blockchain <img src="svg/republicans.svg" /></h1>
+        <h5>
+          Positive: <span class="positive">0</span>
+          Neutral: <span class="neutral">0</span>
+          Negative: <span class="negative">0</span>
+          Total: <span class="total">0</span>
+        </h5>
+      </div>
+ -->
+      <div id="canvas_h" class="col col-md-4">
         <!-- <h1> Hillary Clinton</h1> -->
-        <h1 id="hillary">#hillary <img src="svg/democrats.svg" /></h1>
+        <h1 id="hillary">#Ethereum <img src="svg/democrats.svg" /></h1>
         <h5>
           Positive: <span class="positive">0</span>
           Neutral: <span class="neutral">0</span>
@@ -80,6 +96,7 @@
           Total: <span class="total">0</span>
         </h5>
       </div>
+
     </div>
   </div>
   <footer class="footer">
@@ -96,12 +113,17 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <!-- <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script> -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.3.5/svg.min.js"></script>
   <script src="draw.js"></script>
+  <script src="stacked_charts.js"></script>
   <script>
     hillary = new Candidate('canvas_h', 'tweet_h');
+    blockchain = new Candidate('canvas_b', 'tweet_b');
     trump = new Candidate('canvas_t', 'tweet_t');
   </script>
   <script>
