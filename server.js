@@ -230,19 +230,19 @@ var fetchData = function(callback){
             if (err) throw err;
             //console.log ("rezz " + rez)
             callback(rez);
-            console.log("napokon izracunato " + countSpecificTimeFrame(rez));
+          console.log("napokon izracunato " + countSpecificTimeFrame(rez));
             //console.log( " summed total     " +  btc_summed_total_positive)
-            console.log( " timeStamp1     " +  typeof(rez[2].timeStamp))
-            console.log( " timeStamp2     " +  rez[77].timeStamp.getTime())
-            var firstDate = rez[2].timeStamp
-            var secondDate = rez[77].timeStamp
+            //console.log( " timeStamp1     " +  typeof(rez[2].timeStamp))
+            //console.log( " timeStamp2     " +  rez[77].timeStamp.getTime())
+            //var firstDate = rez[2].timeStamp
+            //var secondDate = rez[77].timeStamp
   
 
-            var status = firstDate<secondDate;
-            var status1 = firstDate>secondDate;
+            //var status = firstDate<secondDate;
+            //var status1 = firstDate>secondDate;
 
-            console.log(" evaultead time dite " + status)
-            console.log(" evaultead time dite " + status1)
+            //console.log(" evaultead time dite " + status)
+            //console.log(" evaultead time dite " + status1)
             db.close();
         });
 
