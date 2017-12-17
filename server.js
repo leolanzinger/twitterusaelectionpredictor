@@ -64,8 +64,11 @@ function saveToDatabase(keyword,total,positive,neutral,negative){
           insertDocuments(db,
             keyword,
             total,
+            positive,
             btc_sentiment_values.positive_percentage,
+            neutral,
             btc_sentiment_values.neutral_percentage,
+            negative,
             btc_sentiment_values.negative_percentage,
             function() {
             findDocuments(db, function() {
@@ -82,8 +85,11 @@ function saveToDatabase(keyword,total,positive,neutral,negative){
           insertDocuments(db,
             keyword,
             total,
+            positive,
             eth_sentiment_values.positive_percentage,
+            neutral,
             eth_sentiment_values.neutral_percentage,
+            negative,
             eth_sentiment_values.negative_percentage,
             function() {
             findDocuments(db, function() {
@@ -112,7 +118,7 @@ var dropTable = function(db, callback) {
     });
 }
 
-var insertDocuments = function(db,keyword,total,positivePercentage,neutralPercentage,negativePercentage, callback) {
+var insertDocuments = function(db,keyword,total,positive,positivePercentage,neutral,neutralPercentage,negative,negativePercentage, callback) {
   // Get the documents collection
   var collection = db.collection('documents');
   // Insert some documents
@@ -121,8 +127,11 @@ var insertDocuments = function(db,keyword,total,positivePercentage,neutralPercen
     keyword:keyword,
     data:{
         total:total, 
+        positive:positive,
+        neutral:neutral,
+        negative:negative, 
         positive_percentage:positivePercentage, 
-        neutral_percentage:neutralPercentage, 
+        neutral_percentage:neutralPercentage,
         negative_percentage:negativePercentage
     }
     }], function(err, result) {
