@@ -229,8 +229,10 @@ var fetchData = function(callback){
         db.collection("documents").find({"timeStamp":{$gte:new Date(new Date().getTime()-60*60*24*1000)}}).toArray(function(err,rez) {
             if (err) throw err;
             //console.log ("rezz " + rez)
-            callback(rez);
-          console.log("napokon izracunato " + countSpecificTimeFrame(rez));
+            //callback(rez);
+          var rezultati = countSpecificTimeFrame(rez);
+          console.log("napokon izracunato " + rezultati);
+          callback(rezultati);
             //console.log( " summed total     " +  btc_summed_total_positive)
             //console.log( " timeStamp1     " +  typeof(rez[2].timeStamp))
             //console.log( " timeStamp2     " +  rez[77].timeStamp.getTime())
