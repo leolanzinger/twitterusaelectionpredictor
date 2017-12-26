@@ -166,57 +166,57 @@ function countSpecificTimeFrame(rez){
     for (i=0;i<rez.length;i++){
         if(rez[i].keyword=="btc"){  
             //console.log (" obo je btc " + rez[i].timeStamp.getHours()); 
-            if(rez[i].timeStamp.getHours()>=generateDate(24) && rez[i].timeStamp.getHours() < generateDate(23)) {btc_summed_total_positive[0] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(23) && rez[i].timeStamp.getHours() < generateDate(22)) {btc_summed_total_positive[1] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(22) && rez[i].timeStamp.getHours() < generateDate(21)) {btc_summed_total_positive[2] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(21) && rez[i].timeStamp.getHours() < generateDate(20)) {btc_summed_total_positive[3] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(20) && rez[i].timeStamp.getHours() < generateDate(19)) {btc_summed_total_positive[4] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(19) && rez[i].timeStamp.getHours() < generateDate(18)) {btc_summed_total_positive[5] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(18) && rez[i].timeStamp.getHours() < generateDate(17)) {btc_summed_total_positive[6] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(17) && rez[i].timeStamp.getHours() < generateDate(16)) {btc_summed_total_positive[7] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(16) && rez[i].timeStamp.getHours() < generateDate(15)) {btc_summed_total_positive[8] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(15) && rez[i].timeStamp.getHours() < generateDate(14)) {btc_summed_total_positive[9] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(14) && rez[i].timeStamp.getHours() < generateDate(13)) {btc_summed_total_positive[10] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(13) && rez[i].timeStamp.getHours() < generateDate(12)) {btc_summed_total_positive[11] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(12) && rez[i].timeStamp.getHours() < generateDate(11)) {btc_summed_total_positive[12] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(11) && rez[i].timeStamp.getHours() < generateDate(10)) {btc_summed_total_positive[13] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(10) && rez[i].timeStamp.getHours() < generateDate(9)) {btc_summed_total_positive[14] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(9) && rez[i].timeStamp.getHours() < generateDate(8)) {btc_summed_total_positive[15] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(8) && rez[i].timeStamp.getHours() < generateDate(7)) {btc_summed_total_positive[16] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(7) && rez[i].timeStamp.getHours() < generateDate(6)) {btc_summed_total_positive[17] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(6) && rez[i].timeStamp.getHours() < generateDate(5)) {btc_summed_total_positive[18] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(5) && rez[i].timeStamp.getHours() < generateDate(4)) {btc_summed_total_positive[19] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(4) && rez[i].timeStamp.getHours() < generateDate(3)) {btc_summed_total_positive[20] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(3) && rez[i].timeStamp.getHours() < generateDate(2)) {btc_summed_total_positive[21] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(2) && rez[i].timeStamp.getHours() < generateDate(1)) {btc_summed_total_positive[22] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(1) && rez[i].timeStamp.getHours() < generateDate(0)) {btc_summed_total_positive[23] += rez[i].data.total}
+            if(rez[i].timeStamp.getHours()>=generateDate(24) && rez[i].timeStamp.getHours() < generateDate(23)) {btc_summed_total_positive[0] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(23) && rez[i].timeStamp.getHours() < generateDate(22)) {btc_summed_total_positive[1] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(22) && rez[i].timeStamp.getHours() < generateDate(21)) {btc_summed_total_positive[2] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(21) && rez[i].timeStamp.getHours() < generateDate(20)) {btc_summed_total_positive[3] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(20) && rez[i].timeStamp.getHours() < generateDate(19)) {btc_summed_total_positive[4] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(19) && rez[i].timeStamp.getHours() < generateDate(18)) {btc_summed_total_positive[5] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(18) && rez[i].timeStamp.getHours() < generateDate(17)) {btc_summed_total_positive[6] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(17) && rez[i].timeStamp.getHours() < generateDate(16)) {btc_summed_total_positive[7] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(16) && rez[i].timeStamp.getHours() < generateDate(15)) {btc_summed_total_positive[8] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(15) && rez[i].timeStamp.getHours() < generateDate(14)) {btc_summed_total_positive[9] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(14) && rez[i].timeStamp.getHours() < generateDate(13)) {btc_summed_total_positive[10] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(13) && rez[i].timeStamp.getHours() < generateDate(12)) {btc_summed_total_positive[11] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(12) && rez[i].timeStamp.getHours() < generateDate(11)) {btc_summed_total_positive[12] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(11) && rez[i].timeStamp.getHours() < generateDate(10)) {btc_summed_total_positive[13] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(10) && rez[i].timeStamp.getHours() < generateDate(9)) {btc_summed_total_positive[14] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(9) && rez[i].timeStamp.getHours() < generateDate(8)) {btc_summed_total_positive[15] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(8) && rez[i].timeStamp.getHours() < generateDate(7)) {btc_summed_total_positive[16] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(7) && rez[i].timeStamp.getHours() < generateDate(6)) {btc_summed_total_positive[17] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(6) && rez[i].timeStamp.getHours() < generateDate(5)) {btc_summed_total_positive[18] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(5) && rez[i].timeStamp.getHours() < generateDate(4)) {btc_summed_total_positive[19] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(4) && rez[i].timeStamp.getHours() < generateDate(3)) {btc_summed_total_positive[20] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(3) && rez[i].timeStamp.getHours() < generateDate(2)) {btc_summed_total_positive[21] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(2) && rez[i].timeStamp.getHours() < generateDate(1)) {btc_summed_total_positive[22] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(1) && rez[i].timeStamp.getHours() < generateDate(0)) {btc_summed_total_positive[23] += rez[i].data.positive_percentage}
         }
         else if(rez[i].keyword=="eth"){  
             //console.log (" obo je btc " + rez[i].timeStamp.getHours()); 
-            if(rez[i].timeStamp.getHours()>=generateDate(24) && rez[i].timeStamp.getHours() < generateDate(23)) {eth_summed_total_positive[0] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(23) && rez[i].timeStamp.getHours() < generateDate(22)) {eth_summed_total_positive[1] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(22) && rez[i].timeStamp.getHours() < generateDate(21)) {eth_summed_total_positive[2] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(21) && rez[i].timeStamp.getHours() < generateDate(20)) {eth_summed_total_positive[3] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(20) && rez[i].timeStamp.getHours() < generateDate(19)) {eth_summed_total_positive[4] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(19) && rez[i].timeStamp.getHours() < generateDate(18)) {eth_summed_total_positive[5] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(18) && rez[i].timeStamp.getHours() < generateDate(17)) {eth_summed_total_positive[6] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(17) && rez[i].timeStamp.getHours() < generateDate(16)) {eth_summed_total_positive[7] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(16) && rez[i].timeStamp.getHours() < generateDate(15)) {eth_summed_total_positive[8] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(15) && rez[i].timeStamp.getHours() < generateDate(14)) {eth_summed_total_positive[9] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(14) && rez[i].timeStamp.getHours() < generateDate(13)) {eth_summed_total_positive[10] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(13) && rez[i].timeStamp.getHours() < generateDate(12)) {eth_summed_total_positive[11] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(12) && rez[i].timeStamp.getHours() < generateDate(11)) {eth_summed_total_positive[12] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(11) && rez[i].timeStamp.getHours() < generateDate(10)) {eth_summed_total_positive[13] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(10) && rez[i].timeStamp.getHours() < generateDate(9)) {eth_summed_total_positive[14] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(9) && rez[i].timeStamp.getHours() < generateDate(8)) {eth_summed_total_positive[15] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(8) && rez[i].timeStamp.getHours() < generateDate(7)) {eth_summed_total_positive[16] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(7) && rez[i].timeStamp.getHours() < generateDate(6)) {eth_summed_total_positive[17] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(6) && rez[i].timeStamp.getHours() < generateDate(5)) {eth_summed_total_positive[18] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(5) && rez[i].timeStamp.getHours() < generateDate(4)) {eth_summed_total_positive[19] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(4) && rez[i].timeStamp.getHours() < generateDate(3)) {eth_summed_total_positive[20] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(3) && rez[i].timeStamp.getHours() < generateDate(2)) {eth_summed_total_positive[21] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(2) && rez[i].timeStamp.getHours() < generateDate(1)) {eth_summed_total_positive[22] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(1) && rez[i].timeStamp.getHours() < generateDate(0)) {eth_summed_total_positive[23] += rez[i].data.total}
+            if(rez[i].timeStamp.getHours()>=generateDate(24) && rez[i].timeStamp.getHours() < generateDate(23)) {eth_summed_total_positive[0] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(23) && rez[i].timeStamp.getHours() < generateDate(22)) {eth_summed_total_positive[1] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(22) && rez[i].timeStamp.getHours() < generateDate(21)) {eth_summed_total_positive[2] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(21) && rez[i].timeStamp.getHours() < generateDate(20)) {eth_summed_total_positive[3] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(20) && rez[i].timeStamp.getHours() < generateDate(19)) {eth_summed_total_positive[4] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(19) && rez[i].timeStamp.getHours() < generateDate(18)) {eth_summed_total_positive[5] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(18) && rez[i].timeStamp.getHours() < generateDate(17)) {eth_summed_total_positive[6] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(17) && rez[i].timeStamp.getHours() < generateDate(16)) {eth_summed_total_positive[7] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(16) && rez[i].timeStamp.getHours() < generateDate(15)) {eth_summed_total_positive[8] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(15) && rez[i].timeStamp.getHours() < generateDate(14)) {eth_summed_total_positive[9] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(14) && rez[i].timeStamp.getHours() < generateDate(13)) {eth_summed_total_positive[10] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(13) && rez[i].timeStamp.getHours() < generateDate(12)) {eth_summed_total_positive[11] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(12) && rez[i].timeStamp.getHours() < generateDate(11)) {eth_summed_total_positive[12] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(11) && rez[i].timeStamp.getHours() < generateDate(10)) {eth_summed_total_positive[13] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(10) && rez[i].timeStamp.getHours() < generateDate(9)) {eth_summed_total_positive[14] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(9) && rez[i].timeStamp.getHours() < generateDate(8)) {eth_summed_total_positive[15] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(8) && rez[i].timeStamp.getHours() < generateDate(7)) {eth_summed_total_positive[16] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(7) && rez[i].timeStamp.getHours() < generateDate(6)) {eth_summed_total_positive[17] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(6) && rez[i].timeStamp.getHours() < generateDate(5)) {eth_summed_total_positive[18] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(5) && rez[i].timeStamp.getHours() < generateDate(4)) {eth_summed_total_positive[19] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(4) && rez[i].timeStamp.getHours() < generateDate(3)) {eth_summed_total_positive[20] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(3) && rez[i].timeStamp.getHours() < generateDate(2)) {eth_summed_total_positive[21] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(2) && rez[i].timeStamp.getHours() < generateDate(1)) {eth_summed_total_positive[22] += rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(1) && rez[i].timeStamp.getHours() < generateDate(0)) {eth_summed_total_positive[23] += rez[i].data.positive_percentage}
         }
     }
     return [btc_summed_total_positive,eth_summed_total_positive];
