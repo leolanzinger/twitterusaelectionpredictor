@@ -28,7 +28,7 @@ $.get(
 var difference_positive_sentiment = eth_object.positive_percentage.map(function(item, index) {
   // In this case item correspond to currentValue of array a, 
   // using index to get value from array b
-  return item - btc_object.positive_percentage[index];
+  return item - btc_object.positive_percentage[index]+10;
 })
 console.log("difference_positive_sentiment: ",difference_positive_sentiment);
 
