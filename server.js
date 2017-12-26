@@ -173,10 +173,7 @@ function countSpecificTimeFrame(rez){
     total_negative_percentage_sum:new Array(24).fill(0),
 
   }
-    var btc_stats.total_positive_sum = new Array(24).fill(0);
     //var btc_summed_total_positive = new Array(24).fill(0);
-    var btc_stats.total_positive_percentage_count = new Array(24).fill(0);
-    var btc_stats.total_positive_percentage_sum = new Array(24).fill(0);
     //var btc_total_positive_percentage = new Array(24).fill(0);
 
     var eth_summed_total_positive = new Array(24).fill(0);
