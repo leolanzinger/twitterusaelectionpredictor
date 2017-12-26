@@ -1,3 +1,15 @@
+var fetched_data = 0;
+$.get(
+    "/fetchDB",
+    function(data) {
+       //alert('page content: ' + data);
+       console.log(data)
+       fetched_data = data;
+    }
+);
+
+
+
 var n = 3, // The number of series.
     m = 24; // The number of values per series.
 
@@ -6,7 +18,8 @@ var n = 3, // The number of series.
 // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
 // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
 var xz = d3.range(m),
-    yz = [[1,2],[3,4]]//d3.range(n).map(function() { return bumps(m); }),
+    yz=[fetched_data[0],fetched_data[1]]
+    //yz = [[1,2],[3,4]]//d3.range(n).map(function() { return bumps(m); }),
     y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
     yMax = d3.max(yz, function(y) { return d3.max(y); }),
     y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
