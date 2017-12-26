@@ -22,7 +22,7 @@ $.get(
         // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
         // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
         var xz = d3.range(m),
-            yz=[holder,fetched_data[1]]
+            yz=[holder]
             //yz = [[1,2],[3,4]]//d3.range(n).map(function() { return bumps(m); }),
             y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
             yMax = d3.max(yz, function(y) { return d3.max(y); }),
