@@ -23,7 +23,9 @@ $.get(
           eth_object.positive_percentage.push(value/fetched_data[0].total_count[index]);
        });
 
-       console.log("stats_object ", btc_object)
+       console.log("stats_object btc ", btc_object)
+       console.log("stats_object eth ", eth_object)
+
 
         var n = 3, // The number of series.
             m = 24; // The number of values per series.
