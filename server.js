@@ -173,10 +173,22 @@ function countSpecificTimeFrame(rez){
     total_negative_percentage_sum:new Array(24).fill(0),
 
   }
+
+    var eth_stats={
+    total_count:new Array(24).fill(0),
+    total_positive_sum:new Array(24).fill(0),
+    total_neutral_sum:new Array(24).fill(0),
+    total_negative_sum:new Array(24).fill(0),
+
+    total_positive_percentage_sum:new Array(24).fill(0),
+    total_neutal_percentage_sum:new Array(24).fill(0),
+    total_negative_percentage_sum:new Array(24).fill(0),
+
+  }
     //var btc_summed_total_positive = new Array(24).fill(0);
     //var btc_total_positive_percentage = new Array(24).fill(0);
 
-    var eth_summed_total_positive = new Array(24).fill(0);
+    ///var eth_summed_total_positive = new Array(24).fill(0);
     for (i=0;i<rez.length;i++){
         if(rez[i].keyword=="btc"){  
             //console.log (" obo je btc " + rez[i].timeStamp.getHours()); 
@@ -207,33 +219,33 @@ function countSpecificTimeFrame(rez){
         }
         else if(rez[i].keyword=="eth"){  
             //console.log (" obo je btc " + rez[i].timeStamp.getHours()); 
-            if(rez[i].timeStamp.getHours()>=generateDate(24) && rez[i].timeStamp.getHours() < generateDate(23)) {eth_summed_total_positive[0] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(23) && rez[i].timeStamp.getHours() < generateDate(22)) {eth_summed_total_positive[1] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(22) && rez[i].timeStamp.getHours() < generateDate(21)) {eth_summed_total_positive[2] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(21) && rez[i].timeStamp.getHours() < generateDate(20)) {eth_summed_total_positive[3] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(20) && rez[i].timeStamp.getHours() < generateDate(19)) {eth_summed_total_positive[4] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(19) && rez[i].timeStamp.getHours() < generateDate(18)) {eth_summed_total_positive[5] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(18) && rez[i].timeStamp.getHours() < generateDate(17)) {eth_summed_total_positive[6] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(17) && rez[i].timeStamp.getHours() < generateDate(16)) {eth_summed_total_positive[7] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(16) && rez[i].timeStamp.getHours() < generateDate(15)) {eth_summed_total_positive[8] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(15) && rez[i].timeStamp.getHours() < generateDate(14)) {eth_summed_total_positive[9] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(14) && rez[i].timeStamp.getHours() < generateDate(13)) {eth_summed_total_positive[10] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(13) && rez[i].timeStamp.getHours() < generateDate(12)) {eth_summed_total_positive[11] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(12) && rez[i].timeStamp.getHours() < generateDate(11)) {eth_summed_total_positive[12] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(11) && rez[i].timeStamp.getHours() < generateDate(10)) {eth_summed_total_positive[13] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(10) && rez[i].timeStamp.getHours() < generateDate(9)) {eth_summed_total_positive[14] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(9) && rez[i].timeStamp.getHours() < generateDate(8)) {eth_summed_total_positive[15] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(8) && rez[i].timeStamp.getHours() < generateDate(7)) {eth_summed_total_positive[16] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(7) && rez[i].timeStamp.getHours() < generateDate(6)) {eth_summed_total_positive[17] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(6) && rez[i].timeStamp.getHours() < generateDate(5)) {eth_summed_total_positive[18] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(5) && rez[i].timeStamp.getHours() < generateDate(4)) {eth_summed_total_positive[19] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(4) && rez[i].timeStamp.getHours() < generateDate(3)) {eth_summed_total_positive[20] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(3) && rez[i].timeStamp.getHours() < generateDate(2)) {eth_summed_total_positive[21] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(2) && rez[i].timeStamp.getHours() < generateDate(1)) {eth_summed_total_positive[22] += rez[i].data.total}
-            else if(rez[i].timeStamp.getHours()>=generateDate(1) && rez[i].timeStamp.getHours() < generateDate(0)) {eth_summed_total_positive[23] += rez[i].data.total}
+            if(rez[i].timeStamp.getHours()>=generateDate(24) && rez[i].timeStamp.getHours() < generateDate(23)) {btc_stats.total_positive_sum[0] += rez[i].data.total; eth_stats.total_count[0]++; eth_stats.total_positive_percentage_sum[0]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(23) && rez[i].timeStamp.getHours() < generateDate(22)) {btc_stats.total_positive_sum[1] += rez[i].data.total; eth_stats.total_count[1]++; eth_stats.total_positive_percentage_sum[1]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(22) && rez[i].timeStamp.getHours() < generateDate(21)) {btc_stats.total_positive_sum[2] += rez[i].data.total; eth_stats.total_count[2]++; eth_stats.total_positive_percentage_sum[2]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(21) && rez[i].timeStamp.getHours() < generateDate(20)) {btc_stats.total_positive_sum[3] += rez[i].data.total; eth_stats.total_count[3]++; eth_stats.total_positive_percentage_sum[3]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(20) && rez[i].timeStamp.getHours() < generateDate(19)) {btc_stats.total_positive_sum[4] += rez[i].data.total; eth_stats.total_count[4]++; eth_stats.total_positive_percentage_sum[4]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(19) && rez[i].timeStamp.getHours() < generateDate(18)) {btc_stats.total_positive_sum[5] += rez[i].data.total; eth_stats.total_count[5]++; eth_stats.total_positive_percentage_sum[5]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(18) && rez[i].timeStamp.getHours() < generateDate(17)) {btc_stats.total_positive_sum[6] += rez[i].data.total; eth_stats.total_count[6]++; eth_stats.total_positive_percentage_sum[6]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(17) && rez[i].timeStamp.getHours() < generateDate(16)) {btc_stats.total_positive_sum[7] += rez[i].data.total; eth_stats.total_count[7]++; eth_stats.total_positive_percentage_sum[7]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(16) && rez[i].timeStamp.getHours() < generateDate(15)) {btc_stats.total_positive_sum[8] += rez[i].data.total; eth_stats.total_count[8]++; eth_stats.total_positive_percentage_sum[8]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(15) && rez[i].timeStamp.getHours() < generateDate(14)) {btc_stats.total_positive_sum[9] += rez[i].data.total; eth_stats.total_count[9]++; eth_stats.total_positive_percentage_sum[9]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(14) && rez[i].timeStamp.getHours() < generateDate(13)) {btc_stats.total_positive_sum[10] += rez[i].data.total; eth_stats.total_count[10]++; eth_stats.total_positive_percentage_sum[9]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(13) && rez[i].timeStamp.getHours() < generateDate(12)) {btc_stats.total_positive_sum[11] += rez[i].data.total; eth_stats.total_count[11]++; eth_stats.total_positive_percentage_sum[10]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(12) && rez[i].timeStamp.getHours() < generateDate(11)) {btc_stats.total_positive_sum[12] += rez[i].data.total; eth_stats.total_count[12]++; eth_stats.total_positive_percentage_sum[11]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(11) && rez[i].timeStamp.getHours() < generateDate(10)) {btc_stats.total_positive_sum[13] += rez[i].data.total; eth_stats.total_count[13]++; eth_stats.total_positive_percentage_sum[12]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(10) && rez[i].timeStamp.getHours() < generateDate(9)) {btc_stats.total_positive_sum[14] += rez[i].data.total; eth_stats.total_count[14]++; eth_stats.total_positive_percentage_sum[13]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(9) && rez[i].timeStamp.getHours() < generateDate(8)) {btc_stats.total_positive_sum[15] += rez[i].data.total; eth_stats.total_count[15]++; eth_stats.total_positive_percentage_sum[14]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(8) && rez[i].timeStamp.getHours() < generateDate(7)) {btc_stats.total_positive_sum[16] += rez[i].data.total; eth_stats.total_count[16]++; eth_stats.total_positive_percentage_sum[15]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(7) && rez[i].timeStamp.getHours() < generateDate(6)) {btc_stats.total_positive_sum[17] += rez[i].data.total; eth_stats.total_count[17]++; eth_stats.total_positive_percentage_sum[16]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(6) && rez[i].timeStamp.getHours() < generateDate(5)) {btc_stats.total_positive_sum[18] += rez[i].data.total; eth_stats.total_count[18]++; eth_stats.total_positive_percentage_sum[17]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(5) && rez[i].timeStamp.getHours() < generateDate(4)) {btc_stats.total_positive_sum[19] += rez[i].data.total; eth_stats.total_count[19]++; eth_stats.total_positive_percentage_sum[18]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(4) && rez[i].timeStamp.getHours() < generateDate(3)) {btc_stats.total_positive_sum[20] += rez[i].data.total; eth_stats.total_count[20]++; eth_stats.total_positive_percentage_sum[19]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(3) && rez[i].timeStamp.getHours() < generateDate(2)) {btc_stats.total_positive_sum[21] += rez[i].data.total; eth_stats.total_count[21]++; eth_stats.total_positive_percentage_sum[20]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(2) && rez[i].timeStamp.getHours() < generateDate(1)) {btc_stats.total_positive_sum[22] += rez[i].data.total; eth_stats.total_count[22]++; eth_stats.total_positive_percentage_sum[21]+=rez[i].data.positive_percentage}
+            else if(rez[i].timeStamp.getHours()>=generateDate(1) && rez[i].timeStamp.getHours() < generateDate(0)) {btc_stats.total_positive_sum[23] += rez[i].data.total; eth_stats.total_count[23]++; eth_stats.total_positive_percentage_sum[22]+=rez[i].data.positive_percentage}
         }
     }
-    return [btc_stats,eth_summed_total_positive];
+    return [btc_stats,eth_stats];
 }
 
 var fetchData = function(callback){

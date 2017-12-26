@@ -4,15 +4,26 @@ $.get(
        //alert('page content: ' + data);
        console.log(data)
        var fetched_data = data;
-       var holder = []
+       var btc_object = {
+        positive_percentage:[],
+       };
+       var eth_object = {
+        positive_percentage:[],
+       }
 
-
+       //for BTC / it is the first item in fetched data array
        $.each(fetched_data[0].total_positive_percentage_sum, function( index, value ) {
          //alert( index + ": " + value );
-          holder.push(value/fetched_data[0].total_count[index]);
+          btc_object.positive_percentage.push(value/fetched_data[0].total_count[index]);
        });
 
-       console.log("holder ", holder)
+        //for ETH / it is the second item in fetched data array
+       $.each(fetched_data[1].total_positive_percentage_sum, function( index, value ) {
+         //alert( index + ": " + value );
+          eth_object.positive_percentage.push(value/fetched_data[0].total_count[index]);
+       });
+
+       console.log("stats_object ", btc_object)
 
         var n = 3, // The number of series.
             m = 24; // The number of values per series.
@@ -22,7 +33,7 @@ $.get(
         // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
         // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
         var xz = d3.range(m),
-            yz=[holder]
+            yz=[btc_object.positive_percentage,eth_object.positive_percentage]
             //yz = [[1,2],[3,4]]//d3.range(n).map(function() { return bumps(m); }),
             y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
             yMax = d3.max(yz, function(y) { return d3.max(y); }),
