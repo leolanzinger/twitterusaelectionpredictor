@@ -25,10 +25,10 @@ $.get(
 
 
 
-var difference_positive_sentiment = btc_object.positive_percentage.map(function(item, index) {
+var difference_positive_sentiment = eth_object.positive_percentage.map(function(item, index) {
   // In this case item correspond to currentValue of array a, 
   // using index to get value from array b
-  return item - eth_object.positive_percentage[index];
+  return item - btc_object.positive_percentage[index];
 })
 console.log("difference_positive_sentiment: ",difference_positive_sentiment);
 
@@ -46,7 +46,8 @@ console.log("difference_positive_sentiment: ",difference_positive_sentiment);
         // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
         var xz = d3.range(m),
             //yz=[btc_object.positive_percentage,eth_object.positive_percentage]
-            yz = [[1,2],[3,4]]//d3.range(n).map(function() { return bumps(m); }),
+            //yz = [[1,2],[3,4]]//d3.range(n).map(function() { return bumps(m); }),
+            yz=[difference_positive_sentiments]
             y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
             yMax = d3.max(yz, function(y) { return d3.max(y); }),
             y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
