@@ -45,9 +45,9 @@ console.log("difference_positive_sentiment: ",difference_positive_sentiment);
         // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
         // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
         var xz = d3.range(m),
-            //yz=[btc_object.positive_percentage,eth_object.positive_percentage]
+            yz=[btc_object.positive_percentage,eth_object.positive_percentage]
             //yz = [[1,2],[3,4]]//d3.range(n).map(function() { return bumps(m); }),
-            yz=[difference_positive_sentiment]
+            //yz=[difference_positive_sentiment]
             y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
             yMax = d3.max(yz, function(y) { return d3.max(y); }),
             y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
