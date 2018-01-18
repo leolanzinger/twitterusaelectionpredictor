@@ -97,6 +97,8 @@ var bandwidth = monthScale.bandwidth();
 
 // y value determined by temp
 var maxTemp = d3.max(temperatures, function(d) { return d; });
+var maxTemp1 = d3.max(temperatures1, function(d) { return d; });
+if (maxTemp<maxTemp1){maxTemp=maxTemp1}//in case if second set has higher max value
 var tempScale = d3.scaleLinear()
   .domain([0, maxTemp])
   .range([height, 0])
