@@ -8,6 +8,9 @@ var config = require('./twit_auth');
 var Sentiment_values = require('./sentiment_values')
 var analyser = new salient.sentiment.BayesSentimentAnalyser();
 
+var pcorr = require( 'compute-pcorr' );
+
+
 
 var btc_sentiment_values = new Sentiment_values();
 var eth_sentiment_values = new Sentiment_values();
@@ -245,7 +248,24 @@ function countSpecificTimeFrame(rez){
             else if(rez[i].timeStamp.getHours()>=generateDate(1) && rez[i].timeStamp.getHours() < generateDate(0)) {eth_stats.total_positive_sum[23] += rez[i].data.total; eth_stats.total_count[23]++; eth_stats.total_positive_percentage_sum[23]+=rez[i].data.positive_percentage}
         }
     }
-    return [btc_stats,eth_stats];
+
+    var btc_clean_stats = btc_stats.total_positive_percentage_sum.map(function(value) {
+      value = value ? value : 0;//Converts NaNs to 0
+      return value;
+    });
+
+    var eth_clean_stats = eth_stats.total_positive_percentage_sum.map(function(value) {
+      value = value ? value : 0;//Converts NaNs to 0
+      return value;
+    });
+
+    btc_stats.total_positive_percentage_sum = btc_clean_stats;
+    eth_stats.total_positive_percentage_sum = eth_clean_stats;
+
+    var mat = pcorr( btc_stats.total_positive_percentage_sum, eth_stats.total_positive_percentage_sum );
+    console.log('josipsd ',mat)
+
+    return [btc_stats,eth_stats, mat[0][1]];
 }
 
 var fetchData = function(callback){

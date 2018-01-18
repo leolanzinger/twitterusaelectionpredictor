@@ -41,6 +41,8 @@ console.log("difference_positive_sentiment: ",difference_positive_sentiment);
 
 
 
+d3.select('#headline')
+  .html("Correlation: "+ fetched_data[2]);//Pearson Correlation 
   
 var temperatures = [
   {temp: 32, month: 'January'},

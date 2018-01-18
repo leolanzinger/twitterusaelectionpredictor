@@ -13,6 +13,7 @@
   "author": "Leonardo Lanzinger <leonardo.lanzinger@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "compute-pcorr": "^1.0.0",
     "express": "*",
     "mongodb": "^2.2.33",
     "node-tweet-stream": "*",
