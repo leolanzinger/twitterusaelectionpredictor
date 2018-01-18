@@ -41,7 +41,8 @@ console.log("difference_positive_sentiment: ",difference_positive_sentiment);
 
 
 
-d3.select('#headline')
+d3.select('#headline').
+  .append('div')
   .html("Correlation: "+ fetched_data[2]);//Pearson Correlation 
   
 var temperatures = [
