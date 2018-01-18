@@ -59,6 +59,9 @@ var temperatures = [
 var temperatures=[3,1,2,3,4,5,6,7,15,25]
 var temperatures1=[1,3,2,6,5,5,4,7,17,27]
 
+var temperatures=btc_object.positive_percentage
+var temperatures1=eth_object.positive_percentage
+
 /*var months = temperatures.map(function(t) {
   return t.month
 });*/
