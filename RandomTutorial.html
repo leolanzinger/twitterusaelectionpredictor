@@ -1,47 +1,21 @@
-$.get(
-    "/fetchDB",
-    function(data) {
-       //alert('page content: ' + data);
-       console.log(data)
-       var fetched_data = data;
-       var btc_object = {
-        positive_percentage:[],
-       };
-       var eth_object = {
-        positive_percentage:[],
-       }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basic Bar Chart</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    /* custom css styles will go here */
 
-       //for BTC / it is the first item in fetched data array
-       $.each(fetched_data[0].total_positive_percentage_sum, function( index, value ) {
-         //alert( index + ": " + value );
-          btc_object.positive_percentage.push(value/fetched_data[0].total_count[index]);
-       });
+    </style>
+</head>
+<body>
+<div id="holder"></div>
 
-        //for ETH / it is the second item in fetched data array
-       $.each(fetched_data[1].total_positive_percentage_sum, function( index, value ) {
-         //alert( index + ": " + value );
-          eth_object.positive_percentage.push(value/fetched_data[0].total_count[index]);
-       });
-
-
-
-var difference_positive_sentiment = eth_object.positive_percentage.map(function(item, index) {
-  // In this case item correspond to currentValue of array a, 
-  // using index to get value from array b
-  return item - btc_object.positive_percentage[index]+10;
-})
-console.log("difference_positive_sentiment: ",difference_positive_sentiment);
-
-
-       console.log("stats_object btc ", btc_object)
-       console.log("stats_object eth ", eth_object)
-
-
-      var yz=[btc_object.positive_percentage,eth_object.positive_percentage]
-
-
-
-  
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script>
+        //your d3 code will go here
 var temperatures = [
   {temp: 32, month: 'January'},
   {temp: 38, month: 'February'},
@@ -56,26 +30,19 @@ var temperatures = [
   {temp: 49, month: 'November'},
   {temp: 37, month: 'December'}
 ];
-var temperatures=[3,1,2,3,4,5,6,7,15,25]
-var temperatures1=[1,3,2,6,5,5,4,7,17,27]
-
-/*var months = temperatures.map(function(t) {
+var months = temperatures.map(function(t) {
   return t.month
-});*/
-
-var hours = temperatures.map(function(v,i){
-  return String(-24+i);
-})
+});
 
 var margin = {top: 5, right: 5, bottom: 50, left: 50};
 // here, we want the full chart to be 700x200, so we determine
 // the width and height by subtracting the margins from those values
-var fullWidth = 550;
-var fullHeight = 300;
+var fullWidth = 700;
+var fullHeight = 200;
 // the width and height values will be used in the ranges of our scales
 var width = fullWidth - margin.right - margin.left;
 var height = fullHeight - margin.top - margin.bottom;
-var svg = d3.select('#canvas_b').append('svg')
+var svg = d3.select('#holder').append('svg')
   .attr('width', fullWidth)
   .attr('height', fullHeight)
   // this g is where the bar chart will be drawn
@@ -85,7 +52,7 @@ var svg = d3.select('#canvas_b').append('svg')
 
 // x value determined by month
 var monthScale = d3.scaleBand()
-  .domain(hours)
+  .domain(months)
   .range([0, width])
   .paddingInner(0.1);
 
@@ -93,7 +60,7 @@ var monthScale = d3.scaleBand()
 var bandwidth = monthScale.bandwidth();
 
 // y value determined by temp
-var maxTemp = d3.max(temperatures, function(d) { return d; });
+var maxTemp = d3.max(temperatures, function(d) { return d.temp; });
 var tempScale = d3.scaleLinear()
   .domain([0, maxTemp])
   .range([height, 0])
@@ -119,7 +86,7 @@ var yText = yAxisEle.append('text')
   .style('fill', 'black')
   .attr('dy', '-2.5em')
   .style('font-size', 14)
-  .text('Positive Percentages');
+  .text('Fahrenheit');
 
 var barHolder = svg.append('g')
   .classed('bar-holder', true);
@@ -132,46 +99,18 @@ var bars = barHolder.selectAll('rect.bar')
     .attr('x', function(d, i) {
       // the x value is determined using the
       // month of the datum
-      return monthScale(-24+i)
+      return monthScale(d.month)
     })
     .attr('width', bandwidth)
-    .attr('fill','orange')
-    .attr('opacity',0.82)
     .attr('y', function(d) {
       // the y position is determined by the datum's temp
       // this value is the top edge of the rectangle
-      return tempScale(d);
+      return tempScale(d.temp);
     })
     .attr('height', function(d) {
       // the bar's height should align it with the base of the chart (y=0)
-      return height - tempScale(d);
+      return height - tempScale(d.temp);
     });
-
-
-
-    // draw the bars
-var bars1 = barHolder.selectAll('rect.bar1')
-    .data(temperatures1)
-  .enter().append('rect')
-    .classed('bar1', true)
-    .attr('x', function(d, i) {
-      // the x value is determined using the
-      // month of the datum
-      return monthScale(-24+i)
-    })
-    .attr('width', bandwidth)
-    .attr('fill','lightgreen')
-    .attr('opacity',0.68)
-    .attr('y', function(d) {
-      // the y position is determined by the datum's temp
-      // this value is the top edge of the rectangle
-      return tempScale(d);
-    })
-    .attr('height', function(d) {
-      // the bar's height should align it with the base of the chart (y=0)
-      return height - tempScale(d);
-    });
-
 
 function convert() {
   // convert temperatures between celsius and fahrenheit
@@ -187,10 +126,10 @@ function convert() {
     .transition()
       .duration(2500)   
       .attr('y', function(d) {
-        return tempScale(d);
+        return tempScale(d.temp);
       })
       .attr('height', function(d) {
-        return height - tempScale(d);
+        return height - tempScale(d.temp);
       })
 }
 
@@ -205,10 +144,6 @@ function toFahrenheit(c) {
 setInterval(convert, 5000);
 
 
-
-
-
-})
-
-
-
+    </script>
+</body>
+</html>

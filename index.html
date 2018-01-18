@@ -61,7 +61,7 @@
   <div class="container-fluid">
     <div class="row">
 
-      <div id="canvas_t" class="col col-md-4">
+      <div id="canvas_t" class="col col-md-3">
         <!--<h1> Donald J. Trump</h1>-->
         <h1 id="trump">#Bitcoin <img src="images/bitcoin.png" /></h1>
         <h5>
@@ -72,8 +72,12 @@
         </h5>
       </div>
 
-      <div id="canvas_b" class="col col-md-4">
-        <svg  width="400" height="240" id="chart"></svg>
+      <div id="canvas_b" class="col col-md-6">
+      <div style="text-align:center">
+        <span style="background-color:orange">Bitcoin</span>
+        <span style="background-color:lightgreen">Ethereum</span>
+      </div>
+        <!-- <svg  width="400" height="240" id="chart"></svg> -->
       </div>
 
 <!--       <div id="canvas_b" class="col col-md-4">
@@ -86,7 +90,7 @@
         </h5>
       </div>
  -->
-      <div id="canvas_h" class="col col-md-4">
+      <div id="canvas_h" class="col col-md-3">
         <!-- <h1> Hillary Clinton</h1> -->
         <h1 id="hillary">#Ethereum <img src="images/ethereum.png" /></h1>
         <h5>
@@ -123,7 +127,7 @@
   <script src="stacked_charts.js"></script>
   <script>
     hillary = new Candidate('canvas_h', 'tweet_h');
-    blockchain = new Candidate('canvas_b', 'tweet_b');
+    //blockchain = new Candidate('canvas_b', 'tweet_b');
     trump = new Candidate('canvas_t', 'tweet_t');
   </script>
   <script>
